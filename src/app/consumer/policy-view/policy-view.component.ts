@@ -22,6 +22,11 @@ export class PolicyViewComponent {
     private route: ActivatedRoute
   ) {}
 
+
+
+  addPolicy(){
+    
+  }
   ngOnInit() {
     const policyId = this.route.snapshot.paramMap.get('id');
 
