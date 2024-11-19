@@ -1,0 +1,65 @@
+<!-- <p>policy-create works!</p>
+ <div class="container">
+    <h2>Create Policy</h2>
+    <form (ngSubmit)="onSubmit()" #policyForm="ngForm">
+      <div class="form-group">
+        <label for="name">Policy Name</label>
+        <input type="text" id="name" class="form-control" [(ngModel)]="policy.name" name="name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="amount">Policy Amount</label>
+        <input type="number" id="amount" class="form-control" [(ngModel)]="policy.amount" name="amount" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="type">Policy Type</label>
+        <input type="text" id="type" class="form-control" [(ngModel)]="policy.type" name="type" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="details">Policy Details</label>
+        <textarea id="details" class="form-control" [(ngModel)]="policy.details" name="details" required></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!policyForm.form.valid">Create Policy</button>
+    </form>
+  </div>
+    -->
+
+
+
+
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+     
+      <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Create Policy</h2>
+    </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    
+    
+    <form class="space-y-6" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div >
+        <label class="block text-sm/6 font-medium text-gray-900" for="consumerid">consumerid</label>
+        <div class="mt-2">
+        <input type="text" id="consumerid" required [(ngModel)]="policy.consumerid" name="consumerid"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
+      </div>
+      </div>
+      <div >
+       
+        <label class="block text-sm/6 font-medium text-gray-900" for="acceptedquotes">acceptedQuotes</label>
+        <div class="mt-2">
+      
+        <input type="text" id="acceptedquotes" required [(ngModel)]="policy.acceptedquotes" name="acceptedquotes" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"/>
+      </div>
+      </div>
+
+<div>
+      <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">create</button>
+    </div>
+   
+    </form>
+  </div>
+  
+  </div>

@@ -10,4 +10,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'policy';
+
+  ngOnInit(){
+   // localStorage.clear();
+
+  }
 }

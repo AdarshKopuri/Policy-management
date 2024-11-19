@@ -1,0 +1,223 @@
+<!-- <p>create-property works!</p>
+<div class="container">
+    <h2>Consumer Business Insurance Details</h2>
+  
+    <form [formGroup]="consumerPropertyForm" (ngSubmit)="onSubmit()">
+      
+    
+      <div class="form-group">
+        <label for="businessId">Business ID</label>
+        <input id="businessId" formControlName="businessId" class="form-control" type="text" />
+        <div *ngIf="f.businessId.touched && f.businessId.invalid" class="text-danger">
+          Business ID is required.
+        </div>
+      </div>
+  
+    
+      <div class="form-group">
+        <label for="consumerId">Consumer ID</label>
+        <input id="consumerId" formControlName="consumerId" class="form-control" type="text" />
+        <div *ngIf="f.consumerId.touched && f.consumerId.invalid" class="text-danger">
+          Consumer ID is required.
+        </div>
+      </div>
+  
+    
+      <div class="form-group">
+        <label for="insuranceType">Insurance Type</label>
+        <input id="insuranceType" formControlName="insuranceType" class="form-control" type="text" />
+        <div *ngIf="f.insuranceType.touched && f.insuranceType.invalid" class="text-danger">
+          Insurance Type is required.
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="propertyType">Property Type</label>
+        <input id="propertyType" formControlName="propertyType" class="form-control" type="text" />
+        <div *ngIf="f.propertyType.touched && f.propertyType.invalid" class="text-danger">
+          Property Type is required.
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="buildingSqFt">Building SqFt</label>
+        <input id="buildingSqFt" formControlName="buildingSqFt" class="form-control" type="number" />
+        <div *ngIf="f.buildingSqFt.touched && f.buildingSqFt.invalid" class="text-danger">
+          Building SqFt must be a positive number.
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="buildingType">Building Type</label>
+        <input id="buildingType" formControlName="buildingType" class="form-control" type="text" />
+        <div *ngIf="f.buildingType.touched && f.buildingType.invalid" class="text-danger">
+          Building Type is required.
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="buildingStoreys">Building Storeys</label>
+        <input id="buildingStoreys" formControlName="buildingStoreys" class="form-control" type="number" />
+        <div *ngIf="f.buildingStoreys.touched && f.buildingStoreys.invalid" class="text-danger">
+          Storeys must be at least 1.
+        </div>
+      </div>
+
+    
+      <div class="form-group">
+        <label for="buildingAge">Building Age</label>
+        <input id="buildingAge" formControlName="buildingAge" class="form-control" type="number" />
+        <div *ngIf="f.buildingAge.touched && f.buildingAge.invalid" class="text-danger">
+          Building Age must be a positive number.
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="costOfTheAsset">Cost of the Asset</label>
+        <input id="costOfTheAsset" formControlName="costOfTheAsset" class="form-control" type="number" />
+        <div *ngIf="f.costOfTheAsset.touched && f.costOfTheAsset.invalid" class="text-danger">
+          Cost of the Asset must be a positive number.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="salvageValue">Salvage Value</label>
+        <input id="salvageValue" formControlName="salvageValue" class="form-control" type="number" />
+        <div *ngIf="f.salvageValue.touched && f.salvageValue.invalid" class="text-danger">
+          Salvage Value must be a positive number or zero.
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="usefulLifeOfTheAsset">Useful Life of the Asset</label>
+        <input id="usefulLifeOfTheAsset" formControlName="usefulLifeOfTheAsset" class="form-control" type="number" />
+        <div *ngIf="f.usefulLifeOfTheAsset.touched && f.usefulLifeOfTheAsset.invalid" class="text-danger">
+          Useful Life of the Asset must be a positive number.
+        </div>
+      </div>
+  
+    
+      <button type="submit" class="btn btn-primary" [disabled]="consumerPropertyForm.invalid">
+        Submit
+      </button>
+    </form>
+  </div>
+   -->
+
+
+   <div class="container">
+  <h2>Consumer Property Insurance Details</h2>
+
+  <form #consumerPropertyForm="ngForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Business ID -->
+    <div class="form-group">
+      <label for="businessId">Business ID</label>
+      <input id="businessId" type="text" class="form-control" [(ngModel)]="model.businessId" name="businessId" required />
+      <div *ngIf="consumerPropertyForm.submitted && !model.businessId" class="text-danger">
+        Business ID is required.
+      </div>
+    </div>
+
+    <!-- Consumer ID -->
+    <div class="form-group">
+      <label for="consumerId">Consumer ID</label>
+      <input id="consumerId" type="text" class="form-control" [(ngModel)]="model.consumerId" name="consumerId" required />
+      <div *ngIf="consumerPropertyForm.submitted && !model.consumerId" class="text-danger">
+        Consumer ID is required.
+      </div>
+    </div>
+
+    <!-- Insurance Type -->
+    <div class="form-group">
+      <label for="insuranceType">Insurance Type</label>
+      <input id="insuranceType" type="text" class="form-control" [(ngModel)]="model.insurancetype" name="insurancetype" required />
+      <div *ngIf="consumerPropertyForm.submitted && !model.insurancetype" class="text-danger">
+        Insurance Type is required.
+      </div>
+    </div>
+
+    <!-- Property Type -->
+    <div class="form-group">
+      <label for="propertyType">Property Type</label>
+      <input id="propertyType" type="text" class="form-control" [(ngModel)]="model.propertytype" name="propertytype" required />
+      <div *ngIf="consumerPropertyForm.submitted && !model.propertytype" class="text-danger">
+        Property Type is required.
+      </div>
+    </div>
+
+    <!-- Building SqFt -->
+    <div class="form-group">
+      <label for="buildingSqFt">Building SqFt</label>
+      <input id="buildingSqFt" type="number" class="form-control" [(ngModel)]="model.buildingsqft" name="buildingsqft" required min="1" />
+      <div *ngIf="consumerPropertyForm.submitted && !model.buildingsqft" class="text-danger">
+        Building SqFt is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Building Type -->
+    <div class="form-group">
+      <label for="buildingType">Building Type</label>
+      <input id="buildingType" type="text" class="form-control" [(ngModel)]="model.buildingtype" name="buildingtype" required />
+      <div *ngIf="consumerPropertyForm.submitted && !model.buildingtype" class="text-danger">
+        Building Type is required.
+      </div>
+    </div>
+
+    <!-- Building Storeys -->
+    <div class="form-group">
+      <label for="buildingStoreys">Building Storeys</label>
+      <input id="buildingStoreys" type="number" class="form-control" [(ngModel)]="model.buildingstoreys" name="buildingstoreys" required min="1" />
+      <div *ngIf="consumerPropertyForm.submitted && !model.buildingstoreys" class="text-danger">
+        Storeys must be at least 1.
+      </div>
+    </div>
+
+    <!-- Building Age -->
+    <div class="form-group">
+      <label for="buildingAge">Building Age</label>
+      <input id="buildingAge" type="number" class="form-control" [(ngModel)]="model.buildingage" name="buildingage" required min="1" />
+      <div *ngIf="consumerPropertyForm.submitted && !model.buildingage" class="text-danger">
+        Building Age must be a positive number.
+      </div>
+    </div>
+
+    <!-- Cost of the Asset -->
+    <div class="form-group">
+      <label for="costOfTheAsset">Cost of the Asset</label>
+      <input id="costOfTheAsset" type="number" class="form-control" [(ngModel)]="model.costoftheasset" name="costoftheasset" required min="1" />
+      <div *ngIf="consumerPropertyForm.submitted && !model.costoftheasset" class="text-danger">
+        Cost of the Asset is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Salvage Value -->
+    <div class="form-group">
+      <label for="salvageValue">Salvage Value</label>
+      <input id="salvageValue" type="number" class="form-control" [(ngModel)]="model.salvagevalue" name="salvagevalue" required min="0" />
+      <div *ngIf="consumerPropertyForm.submitted && !model.salvagevalue" class="text-danger">
+        Salvage Value is required and cannot be negative.
+      </div>
+    </div>
+
+    <!-- Useful Life of the Asset -->
+    <div class="form-group">
+      <label for="usefulLifeOfTheAsset">Useful Life of the Asset</label>
+      <input id="usefulLifeOfTheAsset" type="number" class="form-control" [(ngModel)]="model.usefullifeoftheAsset" name="usefullifeoftheAsset" required min="1" />
+      <div *ngIf="consumerPropertyForm.submitted && !model.usefullifeoftheAsset" class="text-danger">
+        Useful Life of the Asset is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="consumerPropertyForm.invalid">
+      Submit
+    </button>
+  </form>
+</div>

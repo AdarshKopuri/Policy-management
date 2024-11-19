@@ -1,0 +1,206 @@
+<!-- <p>create-business works!</p>
+<div class="container">
+    <h2>Business Consumer Information</h2>
+  
+    <form [formGroup]="businessForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" formControlName="firstname" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" formControlName="lastname" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" formControlName="dob" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="businessname">Business Name</label>
+        <input type="text" id="businessname" formControlName="businessname" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="pandetails">PAN Details</label>
+        <input type="text" id="pandetails" formControlName="pandetails" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" formControlName="phone" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input type="text" id="website" formControlName="website" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="buisinessoverview">Business Overview</label>
+        <textarea id="buisinessoverview" formControlName="buisinessoverview" class="form-control"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="validity">Business Validity</label>
+        <input type="text" id="validity" formControlName="validity" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="agentname">Agent Name</label>
+        <input type="text" id="agentname" formControlName="agentname" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="agentid">Agent ID</label>
+        <input type="text" id="agentid" formControlName="agentid" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="buisinesscategory">Business Category</label>
+        <input type="text" id="buisinesscategory" formControlName="buisinesscategory" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="businesstype">Business Type</label>
+        <input type="text" id="businesstype" formControlName="businesstype" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="buisinessturnover">Business Turnover</label>
+        <input type="text" id="buisinessturnover" formControlName="buisinessturnover" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="capitalinvested">Capital Invested</label>
+        <input type="text" id="capitalinvested" formControlName="capitalinvested" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="totalemployees">Total Employees</label>
+        <input type="text" id="totalemployees" formControlName="totalemployees" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="buisinessage">Business Message</label>
+        <textarea id="buisinessage" formControlName="buisinessage" class="form-control"></textarea>
+      </div>
+  
+      <button type="submit" [disabled]="businessForm.invalid" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </div>
+   -->
+
+
+
+   <div class="container">
+    <h2>Business Consumer Information</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" [(ngModel)]="firstname" name="firstname" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" [(ngModel)]="lastname" name="lastname" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" [(ngModel)]="dob" name="dob" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="businessname">Business Name</label>
+        <input type="text" id="businessname" [(ngModel)]="businessname" name="businessname" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="pandetails">PAN Details</label>
+        <input type="text" id="pandetails" [(ngModel)]="pandetails" name="pandetails" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" [(ngModel)]="phone" name="phone" class="form-control" pattern="^[0-9]{10}$" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input type="text" id="website" [(ngModel)]="website" name="website" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="buisinessoverview">Business Overview</label>
+        <textarea id="buisinessoverview" [(ngModel)]="buisinessoverview" name="buisinessoverview" class="form-control" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="validity">Business Validity</label>
+        <input type="text" id="validity" [(ngModel)]="validity" name="validity" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="agentname">Agent Name</label>
+        <input type="text" id="agentname" [(ngModel)]="agentname" name="agentname" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="agentid">Agent ID</label>
+        <input type="text" id="agentid" [(ngModel)]="agentid" name="agentid" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="buisinesscategory">Business Category</label>
+        <input type="text" id="buisinesscategory" [(ngModel)]="buisinesscategory" name="buisinesscategory" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="businesstype">Business Type</label>
+        <input type="text" id="businesstype" [(ngModel)]="businesstype" name="businesstype" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="buisinessturnover">Business Turnover</label>
+        <input type="text" id="buisinessturnover" [(ngModel)]="buisinessturnover" name="buisinessturnover" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="capitalinvested">Capital Invested</label>
+        <input type="text" id="capitalinvested" [(ngModel)]="capitalinvested" name="capitalinvested" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="totalemployees">Total Employees</label>
+        <input type="text" id="totalemployees" [(ngModel)]="totalemployees" name="totalemployees" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="buisinessage">Business age</label>
+        <textarea id="buisinessage" [(ngModel)]="buisinessage" name="buisinessage" class="form-control" required></textarea>
+      </div>
+  
+      <button type="submit" 
+       class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  
+
+
+        <!-- button    =====  [disabled]="!formValues.valid" -->

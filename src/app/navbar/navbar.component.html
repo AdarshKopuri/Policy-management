@@ -1,0 +1,12 @@
+<p>navbar works!</p>
+<nav class="navbar">
+    <a class="navbar-brand" href="/">Policy Management</a>
+    <div class="navbar-links">
+      <a *ngIf="authService.currentUserValue" href="/dashboard">Dashboard</a>
+      <a *ngIf="authService.currentUserValue" href="/policies">Policies</a>
+      <a *ngIf="authService.currentUserValue?.role === 'admin'" href="/create-policy">Create Policy</a>
+      <a *ngIf="!authService.currentUserValue" href="/login">Login</a>
+      <a *ngIf="!authService.currentUserValue" href="/signup">Sign Up</a>
+      <button *ngIf="authService.currentUserValue" (click)="logout()">Logout</button>
+    </div>
+  </nav>

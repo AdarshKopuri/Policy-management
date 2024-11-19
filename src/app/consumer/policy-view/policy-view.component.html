@@ -1,0 +1,17 @@
+<p>policy-view works!</p>
+ <div class="container">
+    <h2>Policy Details</h2>
+
+    <div class="form-group">
+      <label for="amount">Policyid</label>
+      <input type="number" id="amount" class="form-control" [(ngModel)]="policyid" name="amount" required>
+    </div>
+
+    <div *ngIf="policy">
+      <p><strong>Name:</strong> {{ policy.name }}</p>
+      <p><strong>Amount:</strong> {{ policy.amount }}</p>
+      <p><strong>Type:</strong> {{ policy.type }}</p>
+      <p><strong>Details:</strong> {{ policy.details }}</p>
+    </div>
+  </div>
+   
