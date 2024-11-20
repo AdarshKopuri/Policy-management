@@ -1,1 +1,40 @@
-<p>view-property works!</p>
+
+
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+     
+      <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+    </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    
+    
+    <form class="space-y-6" (ngSubmit)="getProperty()" >
+
+      <div >
+        <label class="block text-sm/6 font-medium text-gray-900" for="consumerid">consumerid</label>
+        <div class="mt-2">
+        <input type="text" id="consumerid" required [(ngModel)]="consumerid" name="consumerid"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
+      </div>
+
+
+      </div>
+
+      <div >
+        <label class="block text-sm/6 font-medium text-gray-900" for="consumerid">propertyid</label>
+        <div class="mt-2">
+        <input type="text" id="propertyid" required [(ngModel)]="propertyid" name="propertyid"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
+      </div>
+
+
+      </div>
+     
+
+<div>
+      <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">viewbusiness </button>
+    </div>
+   
+    </form>
+  </div>
+  
+  </div>

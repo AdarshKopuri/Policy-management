@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConsumerService } from '../consumer.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-view-property',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './view-property.component.html',
   styleUrl: './view-property.component.css'
 })
 export class ViewPropertyComponent {
 
-  business=''
+  consumerid=''
+  propertyid=''
+  property=''
+
+
   
   constructor(
     private consumerService: ConsumerService,
@@ -20,13 +25,26 @@ export class ViewPropertyComponent {
 
   ngOnInit(){
     
-    const consumerid = this.route.snapshot.paramMap.get('id');
+   // const consumerid = this.route.snapshot.paramMap.get('id');
 
-    console.log(consumerid);
-    if (consumerid ) {
-      this.consumerService.getBusiness( consumerid).subscribe(data => {
-        this.business = data;
-      });
+   // console.log(consumerid);
+   // if (consumerid ) {
+      // this.consumerService.getProperty( this.consumerid, this.propertyid).subscribe(data => {
+      //   this.business = data;
+    //  });
     }
-  }
+
+    
+
+  getProperty(){
+    
+    this.consumerService.getProperty( this.consumerid, this.propertyid).subscribe(data => {
+      this.property = data;
+  })
 }
+  
+}
+
+
+
+

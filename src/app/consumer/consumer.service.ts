@@ -37,8 +37,8 @@ const token =this.authService.getToken()
   }
 
 
-  getProperty(propertyid: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/viewConsumerProperty/${propertyid}` ,
+  getProperty(consumerid: string ,propertyid: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/viewConsumerProperty/${consumerid}/${propertyid}` ,
       { headers : this.authService.getHeaders() }
     );
   }

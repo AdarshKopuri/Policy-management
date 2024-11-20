@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class PolicyViewComponent {
 
+  consumerid='';
   policyid='';
 
   policy: any = {};
@@ -24,9 +25,14 @@ export class PolicyViewComponent {
 
 
 
-  addPolicy(){
-    
+  getPolicy(){
+
+    this.policyService.viewPolicy( this.consumerid, this.policyid).subscribe(data => {
+      this.policy = data;
+    });
   }
+
+/*
   ngOnInit() {
     const policyId = this.route.snapshot.paramMap.get('id');
 
@@ -40,5 +46,15 @@ export class PolicyViewComponent {
     // else{
     //   console.log("login ....")
     // }
-  }
+
 }
+    */
+  }
+
+
+
+
+
+
+
+

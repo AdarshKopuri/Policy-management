@@ -2,9 +2,13 @@
  <div class="container">
     <h2>Policy Details</h2>
 
-    <div class="form-group">
+    <div class="form-group" (ngSubmit)="getPolicy()">
+      <label for="amount">Consumerid</label>
+      <input type="number" id="amount" class="form-control" [(ngModel)]="consumerid" name="consumerid" required>
       <label for="amount">Policyid</label>
-      <input type="number" id="amount" class="form-control" [(ngModel)]="policyid" name="amount" required>
+      <input type="number" id="amount" class="form-control" [(ngModel)]="policyid" name="policyid" required>
+
+      <button type="submit" class="btn btn-primary" >Get Quotation</button>
     </div>
 
     <div *ngIf="policy">

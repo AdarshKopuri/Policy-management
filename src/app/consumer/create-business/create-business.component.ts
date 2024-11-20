@@ -84,12 +84,7 @@ export class CreateBusinessComponent {
     this.consumerService.createBusiness(formValues).subscribe(
       response=>
         console.log(response)
-    )
-    ;
-
-
-
-
+    );
 
   }
   //businessForm: FormGroup;

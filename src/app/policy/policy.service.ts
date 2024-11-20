@@ -46,11 +46,11 @@ export class PolicyService {
     );
   }
 
-  // getPolicy(consumerid: string,policyid: string): Observable<any> {
-  //   return this.http.get(`${this.apiUrl}/view/${consumerid}/${policyid}` ,
-  //     { headers : this.authService.getHeaders() }
-  //   );
-  // }
+  viewPolicy(consumerid: string, policyid: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/view/${consumerid}/${policyid}` ,
+      { headers : this.authService.getHeaders() }
+    );
+  }
 
   getPoliciesByUser(userId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/user/${userId}`,

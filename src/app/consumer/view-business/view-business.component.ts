@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { ConsumerService } from '../consumer.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-view-business',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './view-business.component.html',
   styleUrl: './view-business.component.css'
 })
 export class ViewBusinessComponent {
 
   consumerid=''
+  
   constructor(
     private consumerService: ConsumerService,
     private route: ActivatedRoute
@@ -32,6 +34,8 @@ export class ViewBusinessComponent {
   }
 
   getBusiness(){
-
+    this.consumerService.getBusiness( this.consumerid ).subscribe(data => {
+      this.business = data;
+    });
   }
 }

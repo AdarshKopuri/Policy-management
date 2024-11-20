@@ -10,6 +10,8 @@ import { PolicyRequestComponent } from './consumer/policy-request/policy-request
 import { PolicyEditComponent } from './policy/policy-edit/policy-edit.component';
 import { CreateBusinessComponent } from './consumer/create-business/create-business.component';
 import { CreatePropertyComponent } from './consumer/create-property/create-property.component';
+import { ViewBusinessComponent } from './consumer/view-business/view-business.component';
+import { ViewPropertyComponent } from './consumer/view-property/view-property.component';
 
 
 
@@ -31,7 +33,8 @@ export const routes: Routes = [
 
       { path: 'consumer/createBusiness', component: CreateBusinessComponent },
       { path: 'consumer/createProperty', component: CreatePropertyComponent },
-
+      {path: 'consumer/viewProperty',component : ViewPropertyComponent},
+      {path: 'consumer/viewBusiness', component: ViewBusinessComponent},
       { path: 'user/policies/request', component: PolicyRequestComponent},
 
 
