@@ -18,7 +18,10 @@ export class AuthService {
   rawString = "fetziLx4uNwPdhB67i1iFyVi8c3FmjhzZ";
 
   constructor(private http: HttpClient , private router:Router) {
-    this.currentUserSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('currentUser')!));
+   // localStorage.removeItem("currenUser")
+   // this.currentUserSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('currentUser')!));
+      this.currentUserSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('')!));
+
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
@@ -29,8 +32,6 @@ export class AuthService {
         console.log(response);
         // if (response && response.token) {
        
-        
-        
         return response;
       });
   }

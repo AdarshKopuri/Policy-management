@@ -28,13 +28,19 @@ export class LoginComponent {
 // try sending  encoded password
       console.log(response.token)
      localStorage.setItem("token",response.token)
-     localStorage.setItem("username",this.username)
+     localStorage.setItem("currentUser",this.username)
       if (response.token) {
 
         console.log("dashboard")
         this.router.navigate(['/dashboard']);
       }
     });
+
+    // if (localStorage.getItem("token")!="") {
+
+    //   console.log("dashboard")
+    //   this.router.navigate(['/dashboard']);
+    // }
   }
 
 

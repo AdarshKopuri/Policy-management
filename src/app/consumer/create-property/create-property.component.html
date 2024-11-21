@@ -108,11 +108,17 @@
       </button>
     </form>
   </div>
+
+
+
+  #consumerPropertyForm="ngForm"
+    <form #consumerPropertyForm="ngForm" (ngSubmit)="onSubmit()"  class="space-y-6">
+
    -->
 
 
-   <div class="container">
-
+  
+<!--
 
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm"> 
@@ -121,18 +127,21 @@
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-  <form #consumerPropertyForm="ngForm" (ngSubmit)="onSubmit()"  class="space-y-6">
+    <form #consumerPropertyForm="ngForm" (ngSubmit)="onSubmit()"  class="space-y-6 ">
     
-    <!-- Business ID -->
-    <div class="form-group">
+  
+  <div>
       <label for="businessId" class="block text-sm/6 font-medium text-gray-900">Business ID</label>
+      <div class="mt-2">
       <input id="businessId" type="text" class="form-control" [(ngModel)]="model.businessId" name="businessId" required />
+    </div>
+      
       <div *ngIf="consumerPropertyForm.submitted && !model.businessId" class="text-danger">
         Business ID is required.
       </div>
     </div>
 
-    <!-- Consumer ID -->
+  
     <div class="form-group">
       <label for="consumerId" class="block text-sm/6 font-medium text-gray-900">Consumer ID</label>
       <input id="consumerId" type="text" class="form-control" [(ngModel)]="model.consumerId" name="consumerId" required />
@@ -141,7 +150,7 @@
       </div>
     </div>
 
-    <!-- Insurance Type -->
+
     <div class="form-group">
       <label for="insuranceType" class="block text-sm/6 font-medium text-gray-900">Insurance Type</label>
       <input id="insuranceType" type="text" class="form-control" [(ngModel)]="model.insurancetype" name="insurancetype" required />
@@ -150,7 +159,7 @@
       </div>
     </div>
 
-    <!-- Property Type -->
+    
     <div class="form-group">
       <label for="propertyType" class="block text-sm/6 font-medium text-gray-900">Property Type</label>
       <input id="propertyType" type="text" class="form-control" [(ngModel)]="model.propertytype" name="propertytype" required />
@@ -159,7 +168,7 @@
       </div>
     </div>
 
-    <!-- Building SqFt -->
+
     <div class="form-group">
       <label for="buildingSqFt" class="block text-sm/6 font-medium text-gray-900">Building SqFt</label>
       <input id="buildingSqFt" type="number" class="form-control" [(ngModel)]="model.buildingsqft" name="buildingsqft" required min="1" />
@@ -168,7 +177,7 @@
       </div>
     </div>
 
-    <!-- Building Type -->
+  
     <div class="form-group">
       <label for="buildingType" class="block text-sm/6 font-medium text-gray-900">Building Type</label>
       <input id="buildingType" type="text" class="form-control" [(ngModel)]="model.buildingtype" name="buildingtype" required />
@@ -177,7 +186,7 @@
       </div>
     </div>
 
-    <!-- Building Storeys -->
+  
     <div class="form-group">
       <label for="buildingStoreys" class="block text-sm/6 font-medium text-gray-900">Building Storeys</label>
       <input id="buildingStoreys" type="number" class="form-control" [(ngModel)]="model.buildingstoreys" name="buildingstoreys" required min="1" />
@@ -186,7 +195,7 @@
       </div>
     </div>
 
-    <!-- Building Age -->
+
     <div class="form-group">
       <label for="buildingAge" class="block text-sm/6 font-medium text-gray-900">Building Age</label>
       <input id="buildingAge" type="number" class="form-control" [(ngModel)]="model.buildingage" name="buildingage" required min="1" />
@@ -195,7 +204,7 @@
       </div>
     </div>
 
-    <!-- Cost of the Asset -->
+  
     <div class="form-group">
       <label for="costOfTheAsset" class="block text-sm/6 font-medium text-gray-900">Cost of the Asset</label>
       <input id="costOfTheAsset" type="number" class="form-control" [(ngModel)]="model.costoftheasset" name="costoftheasset" required min="1" />
@@ -204,7 +213,7 @@
       </div>
     </div>
 
-    <!-- Salvage Value -->
+    
     <div class="form-group">
       <label for="salvageValue" class="block text-sm/6 font-medium text-gray-900">Salvage Value</label>
       <input id="salvageValue" type="number" class="form-control" [(ngModel)]="model.salvagevalue" name="salvagevalue" required min="0" />
@@ -213,7 +222,7 @@
       </div>
     </div>
 
-    <!-- Useful Life of the Asset -->
+  
     <div class="form-group">
       <label for="usefulLifeOfTheAsset" class="block text-sm/6 font-medium text-gray-900">Useful Life of the Asset</label>
       <input id="usefulLifeOfTheAsset" type="number" class="form-control" [(ngModel)]="model.usefullifeoftheAsset" name="usefullifeoftheAsset" required min="1" />
@@ -222,13 +231,83 @@
       </div>
     </div>
 
-    <!-- Submit Button -->
+  
     <button type="submit"  [disabled]="consumerPropertyForm.invalid"  class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
       Submit
     </button>
   </form>
 </div>
+-->
 
 
-</div>
-</div>
+
+<div class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-md rounded px-8 py-6 w-full max-w-lg">
+    <h1 class="text-2xl font-bold mb-6 text-center text-gray-700">Asset Details Form</h1>
+    <form>
+      <div class="mb-4">
+        <label for="businessId" class="block text-gray-600 font-medium mb-2">Business ID</label>
+        <input type="text" id="businessId" [(ngModel)]="businessId" name="businessId"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="consumerId" class="block text-gray-600 font-medium mb-2">Consumer ID</label>
+        <input type="text" id="consumerId" [(ngModel)]="consumerId" name="consumerId"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="insurancetype" class="block text-gray-600 font-medium mb-2">Insurance Type</label>
+        <input type="text" id="insurancetype" [(ngModel)]="insurancetype" name="insurancetype"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="propertytype" class="block text-gray-600 font-medium mb-2">Property Type</label>
+        <input type="text" id="propertytype" [(ngModel)]="propertytype" name="propertytype"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="buildingsqft" class="block text-gray-600 font-medium mb-2">Building Sq Ft</label>
+        <input type="number" id="buildingsqft" [(ngModel)]="buildingsqft" name="buildingsqft"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="buildingtype" class="block text-gray-600 font-medium mb-2">Building Type</label>
+        <input type="text" id="buildingtype" [(ngModel)]="buildingtype" name="buildingtype"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="buildingstoreys" class="block text-gray-600 font-medium mb-2">Building Storeys</label>
+        <input type="number" id="buildingstoreys" [(ngModel)]="buildingstoreys" name="buildingstoreys"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="buildingage" class="block text-gray-600 font-medium mb-2">Building Age</label>
+        <input type="number" id="buildingage" [(ngModel)]="buildingage" name="buildingage"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="costoftheasset" class="block text-gray-600 font-medium mb-2">Cost of the Asset</label>
+        <input type="number" id="costoftheasset" [(ngModel)]="costoftheasset" name="costoftheasset"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="salvagevalue" class="block text-gray-600 font-medium mb-2">Salvage Value</label>
+        <input type="number" id="salvagevalue" [(ngModel)]="salvagevalue" name="salvagevalue"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="usefullifeoftheAsset" class="block text-gray-600 font-medium mb-2">Useful Life of the Asset</label>
+        <input type="number" id="usefullifeoftheAsset" [(ngModel)]="usefullifeoftheAsset" name="usefullifeoftheAsset"
+          class="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div class="text-center">
+        <button type="submit"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+
+<!-- </div> -->

@@ -1,4 +1,5 @@
 
+<div  class="grid grid-cols-2">
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
      
@@ -8,15 +9,13 @@
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
     
     
-    <form class="space-y-6" (ngSubmit)="getBusiness()" >
+    <form #viewBusinessForm="ngForm" class="space-y-6" (ngSubmit)="getBusiness()" >
       <div >
         <label class="block text-sm/6 font-medium text-gray-900" for="consumerid">consumerid</label>
         <div class="mt-2">
         <input type="text" id="consumerid" required [(ngModel)]="consumerid" name="consumerid"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
       </div>
       </div>
-     
-
 <div>
       <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">viewbusiness </button>
     </div>
@@ -25,3 +24,40 @@
   </div>
   
   </div>
+
+
+
+
+  <div  *ngIf=" viewBusinessForm.submitted && consumerid"   class="grid grid-cols-2 gap-4	justify-center m-8 ms-8">
+
+    
+    <p><strong>FirstName:</strong> {{ business.firstname }}</p>
+    <p><strong>LastName:</strong> {{ business.lastname }}</p>
+    <p><strong>DOB:</strong> {{ business.dob }}</p>
+    <p><strong>Business Name:</strong> {{ business.businessname }}</p>
+    <p><strong>pandetails:</strong> {{ business.pandetails }}</p>
+    <p><strong>Email:</strong> {{ business.email }}</p>
+    <p><strong>Phone:</strong> {{ business.phone }}</p>
+    <p><strong>Website:</strong> {{ business.website }}</p>
+
+    <p><strong>Business Overview:</strong> {{ business.businessoverview }}</p>
+    <p><strong>Validity:</strong> {{ business.validity }}</p>
+    <p><strong>Agent Name:</strong> {{ business.agentname }}</p>
+    <p><strong>AgentId:</strong> {{ business.agentid }}</p>
+    <p><strong>BusinessId:</strong> {{ business.businessid }}</p>
+    <p><strong>Consumerid:</strong> {{ business.consumerid }}</p>
+    <p><strong>Businesscategory:</strong> {{ business.businesscategory }}</p>
+    <p><strong>Businesstype:</strong> {{ business.businesstype }}</p>
+    <p><strong>Business turnover:</strong> {{ business.businessturnover }}</p>
+    <p><strong>Capital Invested:</strong> {{ business.capitalinvested }}</p>
+    <p><strong>Total Employees:</strong> {{ business.totalemployees }}</p>
+
+    <p><strong>Business Value:</strong> {{ business.businessvalue }}</p>
+    <p><strong>Business Age:</strong> {{ business.businessage }}</p>
+
+  </div>
+
+
+
+
+</div>

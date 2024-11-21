@@ -1,6 +1,7 @@
 <p>policy-view works!</p>
- <div class="container">
-    <h2>Policy Details</h2>
+<h2>Policy Details</h2>
+ <div class="container grid grid-cols-2 ">
+
 
     <div class="form-group" (ngSubmit)="getPolicy()">
       <label for="amount">Consumerid</label>
@@ -11,11 +12,13 @@
       <button type="submit" class="btn btn-primary" >Get Quotation</button>
     </div>
 
-    <div *ngIf="policy">
+    <div *ngIf="policy"  class="grid grid-cols-2 gap-4	justify-center m-8 ms-8">
       <p><strong>Name:</strong> {{ policy.name }}</p>
       <p><strong>Amount:</strong> {{ policy.amount }}</p>
       <p><strong>Type:</strong> {{ policy.type }}</p>
       <p><strong>Details:</strong> {{ policy.details }}</p>
     </div>
+
+
   </div>
    

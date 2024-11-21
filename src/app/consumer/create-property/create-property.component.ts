@@ -28,6 +28,20 @@ export class CreatePropertyComponent {
     usefullifeoftheAsset: ''
   };
 
+  
+    businessId= ''
+    consumerId= ''
+    insurancetype= ''
+    propertytype= ''
+    buildingsqft= ''
+    buildingtype= ''
+    buildingstoreys= ''
+    buildingage= ''
+    costoftheasset= ''
+    salvagevalue= ''
+    usefullifeoftheAsset= ''
+
+
   constructor(private consumerService: ConsumerService, private router: Router) {}
 
   // consumerPropertyForm: FormGroup;

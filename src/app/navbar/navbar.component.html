@@ -1,5 +1,5 @@
-<p>navbar works!</p>
-<nav class="navbar">
+
+<!-- <nav class="navbar">
     <a class="navbar-brand" href="/">Policy Management</a>
     <div class="navbar-links">
       <a *ngIf="authService.currentUserValue" href="/dashboard">Dashboard</a>
@@ -9,4 +9,70 @@
       <a *ngIf="!authService.currentUserValue" href="/signup">Sign Up</a>
       <button *ngIf="authService.currentUserValue" (click)="logout()">Logout</button>
     </div>
-  </nav>
+  </nav> -->
+
+
+  <div class="block">
+    <h2 class="text-center text-3xl font-semibold
+     leading-7 text-green-600 mt-2">
+        Policy Management System
+    </h2>
+</div>
+
+<div class="text-sm font-medium text-center
+ text-gray-500 border-b border-gray-300">
+    <ul class="flex flex-wrap -mb-px">
+      <li class="me-2">
+        <button class="nav-item inline-block 
+        p-4 text-blue-600 border-b-2 border-blue-600
+         rounded-t-lg active"
+            id="nav-consumer" 
+            (click)="navClick('home')">
+            Home
+        </button>
+    </li>
+        <li class="me-2">
+            <button  class="nav-item inline-block p-4 
+            border-b-2 border-transparent rounded-t-lg 
+            hover:text-gray-600 hover:border-gray-300"
+                id="nav-consumer" 
+                (click)="navClick('business')">
+                Consumer Business
+            </button>
+        </li>
+        <li class="me-2">
+            <button id="nav-doctors" 
+            (click)="navClick('property')"
+                class="nav-item inline-block p-4 
+                border-b-2 border-transparent rounded-t-lg 
+                hover:text-gray-600 hover:border-gray-300">
+                Property
+            </button>
+        </li>
+        <li class="me-2">
+            <button id="nav-patients" 
+            (click)="navClick('policy')"
+                class="nav-item inline-block p-4 border-b-2
+                 border-transparent rounded-t-lg hover:text-gray-600
+                  hover:border-gray-300">
+                Policy
+            </button>
+        </li>
+        <li class="me-2">
+          <button id="nav-patients" 
+          (click)="navClick('quotes')"
+              class="nav-item inline-block p-4 border-b-2
+               border-transparent rounded-t-lg hover:text-gray-600
+                hover:border-gray-300">
+              Quotes
+          </button>
+      </li>
+        <li class="me-2 object-right">
+          <button class="nav-item inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" (click)="logout()">Logout</button>
+
+        </li>
+    </ul>
+
+
+    <!-- <button *ngIf="authService.currentUserValue" class="nav-item inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" (click)="logout()">Logout</button> -->
+</div>

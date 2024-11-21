@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ConsumerService } from '../consumer.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-view-business',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './view-business.component.html',
   styleUrl: './view-business.component.css'
 })
@@ -19,7 +20,7 @@ export class ViewBusinessComponent {
     private route: ActivatedRoute
   ) {}
 
-  business=''
+  business:any={}
 
   ngOnInit(){
     

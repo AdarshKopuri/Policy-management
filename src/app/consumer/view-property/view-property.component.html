@@ -1,4 +1,4 @@
-
+<div class="grid grid-cols-2">
 
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -8,7 +8,6 @@
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
     
-    
     <form class="space-y-6" (ngSubmit)="getProperty()" >
 
       <div >
@@ -16,7 +15,6 @@
         <div class="mt-2">
         <input type="text" id="consumerid" required [(ngModel)]="consumerid" name="consumerid"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
       </div>
-
 
       </div>
 
@@ -26,10 +24,8 @@
         <input type="text" id="propertyid" required [(ngModel)]="propertyid" name="propertyid"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
       </div>
 
-
       </div>
      
-
 <div>
       <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">viewbusiness </button>
     </div>
@@ -37,4 +33,30 @@
     </form>
   </div>
   
+  </div>
+
+
+  
+
+  <div class="grid grid-cols-1 gap-4	justify-center m-8 ms-8" >
+
+    <p><strong>propertyId:</strong> {{ property.propertyId }}</p>
+    <p><strong>businessId:</strong> {{ property.businessId }}</p>
+    <p><strong>consumerId:</strong> {{ property.consumerId }}</p>
+    <p><strong>Insurance type:</strong> {{ property.insurancetype }}</p>
+    <p><strong>Property type:</strong> {{ property.propertytype }}</p>
+    <p><strong>Building sqft:</strong> {{ property.buildingsqft }}</p>
+    <p><strong>Building Type:</strong> {{ property.buildingtype }}</p>
+    <p><strong>Building Storeys:</strong> {{ property.buildingstoreys }}</p>
+    <p><strong>Building age:</strong> {{ property.buildingage }}</p>
+    <p><strong>Asset Cost:</strong> {{ property.costoftheasset }}</p>
+    <p><strong>Salvage Value:</strong> {{ property.salvagevalue }}</p>
+    <p><strong>Useful life of the Asset:</strong> {{ property.usefullifeoftheAsset }}</p>
+
+
+
+  </div>
+
+
+
   </div>

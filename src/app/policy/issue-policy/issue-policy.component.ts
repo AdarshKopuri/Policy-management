@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PolicyService } from '../policy.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-issue-policy',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './issue-policy.component.html',
   styleUrl: './issue-policy.component.css'
 })

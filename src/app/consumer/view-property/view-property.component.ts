@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConsumerService } from '../consumer.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-view-property',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './view-property.component.html',
   styleUrl: './view-property.component.css'
 })
@@ -14,10 +15,8 @@ export class ViewPropertyComponent {
 
   consumerid=''
   propertyid=''
-  property=''
+  property:any={}
 
-
-  
   constructor(
     private consumerService: ConsumerService,
     private route: ActivatedRoute
@@ -33,8 +32,6 @@ export class ViewPropertyComponent {
       //   this.business = data;
     //  });
     }
-
-    
 
   getProperty(){
     

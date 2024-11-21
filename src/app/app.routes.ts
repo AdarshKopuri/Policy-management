@@ -12,6 +12,8 @@ import { CreateBusinessComponent } from './consumer/create-business/create-busin
 import { CreatePropertyComponent } from './consumer/create-property/create-property.component';
 import { ViewBusinessComponent } from './consumer/view-business/view-business.component';
 import { ViewPropertyComponent } from './consumer/view-property/view-property.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { IssuePolicyComponent } from './policy/issue-policy/issue-policy.component';
 
 
 
@@ -19,24 +21,26 @@ export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'dashboard', component: DashboardComponent, canActivate: [RoleGuard], data: { role: 'user' } },
-
+   // { path: 'dashboard', component: DashboardComponent, canActivate: [RoleGuard], data: { role: 'user' } },
+    { path: 'dashboard', component: DashboardComponent},
+    { path :'navbar',component: NavbarComponent},
 
 
     // { path: 'create-policy', component: PolicyCreateComponent, canActivate: [RoleGuard], data: { role: 'admin' } },
 
     { path: 'createPolicy', component: PolicyCreateComponent},
-
     { path: 'policies', component: PolicyListComponent },
-
     { path: 'policy/:id', component: PolicyViewComponent },
 
       { path: 'consumer/createBusiness', component: CreateBusinessComponent },
       { path: 'consumer/createProperty', component: CreatePropertyComponent },
-      {path: 'consumer/viewProperty',component : ViewPropertyComponent},
+      {path: 'consumer/viewProperty', component : ViewPropertyComponent},
       {path: 'consumer/viewBusiness', component: ViewBusinessComponent},
       { path: 'user/policies/request', component: PolicyRequestComponent},
 
+      {path: 'issuePolicy', component: IssuePolicyComponent}
+
+  
 
     // { path: 'consumer/list', component: ConsumerListComponent },
     
